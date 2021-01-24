@@ -15,4 +15,6 @@ class Person {
 }
 const user1 = new Person("Jeff", 30);
 user1.greet("Hi there");
+const user2 = new Person("John", 30, "Pramp");
+user2.greet("Hello");
 //# sourceMappingURL=app.js.map
