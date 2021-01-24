@@ -1,8 +1,13 @@
-var add = function (n1, n2) {
-    return n1 + n2;
+"use strict";
+var userInput;
+var userName;
+userInput = 5;
+userInput = "Max";
+if (typeof userInput === "string") {
+    userName = userInput;
+}
+// return type never.
+var generateError = function (message, code) {
+    //   throw { message: message, errorCode: code };
 };
-// return type is void
-var printResult = function (num) {
-    console.log("Result: " + num);
-};
-console.log(typeof printResult(4));
+generateError("An error occurred!", 500);

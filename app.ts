@@ -7,9 +7,9 @@ if (typeof userInput === "string") {
   userName = userInput;
 }
 
-// return type never
+// return type never.
 const generateError = (message: string, code: number) => {
-  throw { message: message, errorCode: code };
+  //   throw { message: message, errorCode: code };
 };
 
 generateError("An error occurred!", 500);
