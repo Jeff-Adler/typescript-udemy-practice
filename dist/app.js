@@ -1,6 +1,12 @@
 "use strict";
-console.log("test2");
-for (let i = 0; i < 10; i++) {
-    console.log(i);
+class Department {
+    constructor(n) {
+        this.name = n;
+    }
+    describe() {
+        console.log(`Department: ${this.name}`);
+    }
 }
+const accounting = new Department("Accounting");
+accounting.describe();
 //# sourceMappingURL=app.js.map

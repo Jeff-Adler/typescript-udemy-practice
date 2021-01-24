@@ -1,5 +1,15 @@
-console.log("test2");
+class Department {
+  name: string;
 
-for (let i = 0; i < 10; i++) {
-  console.log(i);
+  constructor(n: string) {
+    this.name = n;
+  }
+
+  describe() {
+    console.log(`Department: ${this.name}`);
+  }
 }
+
+const accounting = new Department("Accounting");
+
+accounting.describe();
