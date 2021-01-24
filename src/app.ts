@@ -1,5 +1,5 @@
-const button = document.querySelector("button")!;
+console.log("test2");
 
-button.addEventListener("click", () => {
-  console.log("Clicked!");
-});
+for (let i = 0; i < 10; i++) {
+  console.log(i);
+}

@@ -1,5 +1,6 @@
 "use strict";
-const button = document.querySelector("button");
-button.addEventListener("click", () => {
-    console.log("Clicked!");
-});
+console.log("test2");
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+}
+//# sourceMappingURL=app.js.map
