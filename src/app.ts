@@ -9,17 +9,24 @@ const add: AddFn = (a: number, b: number) => {
 
 interface Named {
   readonly name: string;
+  surname?: string;
 }
 
 interface Greetable extends Named {
   greet(phrase: string): void;
+  surname?: string;
 }
 
 class Person implements Greetable {
-  constructor(readonly name: string, readonly age: number) {}
+  constructor(
+    readonly name: string,
+    readonly age: number,
+    readonly surname?: string
+  ) {}
 
   greet(phrase: string) {
-    console.log(`${phrase} ${this.name}`);
+    const surname = this.surname ? this.surname : "";
+    console.log(`${phrase} ${this.name} ${surname}`);
   }
 }
 

@@ -3,12 +3,14 @@ const add = (a, b) => {
     return a + b;
 };
 class Person {
-    constructor(name, age) {
+    constructor(name, age, surname) {
         this.name = name;
         this.age = age;
+        this.surname = surname;
     }
     greet(phrase) {
-        console.log(`${phrase} ${this.name}`);
+        const surname = this.surname ? this.surname : "";
+        console.log(`${phrase} ${this.name} ${surname}`);
     }
 }
 const user1 = new Person("Jeff", 30);
