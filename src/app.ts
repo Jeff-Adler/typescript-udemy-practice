@@ -48,3 +48,33 @@ const extractAndConvert = <T extends object, U extends keyof T>(
 ) => {
   return "Value: " + obj[key];
 };
+
+//Generic class specificies that whatever type you declare an instance of DataStorage to,
+//all methods will correspond to that type
+class DataStorage<T extends string | number | boolean> {
+  private data = Array<T>();
+
+  addItem(item: T) {
+    this.data.push(item);
+  }
+
+  removeItem(item: T) {
+    this.data.splice(this.data.indexOf(item), 1);
+  }
+
+  getItems() {
+    return [...this.data];
+  }
+}
+
+const textStorage = new DataStorage<string>();
+textStorage.addItem("Jeff");
+textStorage.addItem("Steve");
+console.log(textStorage.getItems());
+
+const numberStorage = new DataStorage<number>();
+numberStorage.addItem(5);
+
+//We won't be able to use removeItem if T = object, given the logic we've written
+//Thus, we extend T to only accept string, number, or boolean
+// const objStorage = new DataStorage<object>();

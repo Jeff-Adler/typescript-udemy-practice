@@ -20,4 +20,24 @@ console.log(countAndPrintLength(["An arary is also lengthy"]));
 const extractAndConvert = (obj, key) => {
     return "Value: " + obj[key];
 };
+class DataStorage {
+    constructor() {
+        this.data = Array();
+    }
+    addItem(item) {
+        this.data.push(item);
+    }
+    removeItem(item) {
+        this.data.splice(this.data.indexOf(item), 1);
+    }
+    getItems() {
+        return [...this.data];
+    }
+}
+const textStorage = new DataStorage();
+textStorage.addItem("Jeff");
+textStorage.addItem("Steve");
+console.log(textStorage.getItems());
+const numberStorage = new DataStorage();
+numberStorage.addItem(5);
 //# sourceMappingURL=app.js.map
