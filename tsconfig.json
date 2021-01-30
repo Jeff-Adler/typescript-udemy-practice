@@ -74,6 +74,6 @@
     "skipLibCheck": true /* Skip type checking of declaration files. */,
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
-  "exclude": ["./playground", "node_modules"]
-  // "include": ["app.ts", "analytics.ts"]
+  "exclude": ["./playground", "node_modules"],
+  "include": ["./src/app.ts"]
 }
