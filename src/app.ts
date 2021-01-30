@@ -37,6 +37,26 @@ const result = add("Jeff", "Adler");
 //Because of overloaded function above, TypeScript allows this. It knows that result will be of type string
 result.split(" ");
 
+const fetchedUserData = {
+  id: "u1",
+  name: "Max",
+  job: { title: "CEO", description: "My own company" },
+};
+
+//Optional Chaining: question mark indicates to return remainder of the command only if the thing exists. Useful when fetching data
+console.log(fetchedUserData?.job?.title);
+
+const userInput = "";
+
+// "" is considered falsy, so storedData will be set to default value
+const storedData = userInput || "Default";
+
+// ?? is stricter, and only recognizes false or undefined as falsy values. Useful for fetching data, where some values might be ""
+const storedData2 = userInput ?? "Default";
+
+console.log(storedData);
+console.log(storedData2);
+
 // type UnknownEmployee = Employee | Admin;
 
 // const printEmployeeInformation = (emp: UnknownEmployee) => {
