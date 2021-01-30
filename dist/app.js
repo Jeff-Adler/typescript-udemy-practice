@@ -1,51 +1,37 @@
 "use strict";
-const names = ["Jeff", "Manuel"];
-const merge = (objA, objB) => {
-    return Object.assign(objA, objB);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-const mergedObj = merge({ name: "Jeff" }, { age: 30 });
-const mergedObj2 = merge({ id: 1 }, { age: 30 });
-const mergedObj3 = merge({ name: "Jeff" }, { vegetarian: false });
-console.log(mergedObj);
-console.log(mergedObj2);
-console.log(mergedObj3);
-const countAndPrintLength = (element) => {
-    let descriptionText = "Got no value.";
-    if (element.length > 0)
-        descriptionText = `Got ${element.length} elements.`;
-    return [element, descriptionText];
-};
-console.log(countAndPrintLength("A string is lengthy"));
-console.log(countAndPrintLength(["An arary is also lengthy"]));
-const extractAndConvert = (obj, key) => {
-    return "Value: " + obj[key];
-};
-class DataStorage {
-    constructor() {
-        this.data = Array();
-    }
-    addItem(item) {
-        this.data.push(item);
-    }
-    removeItem(item) {
-        this.data.splice(this.data.indexOf(item), 1);
-    }
-    getItems() {
-        return [...this.data];
-    }
+function Logger(logString) {
+    return (constructor) => {
+        console.log(logString);
+        console.log(constructor);
+    };
 }
-const textStorage = new DataStorage();
-textStorage.addItem("Jeff");
-textStorage.addItem("Steve");
-console.log(textStorage.getItems());
-const numberStorage = new DataStorage();
-numberStorage.addItem(5);
-const createCourseGoal = (title, description, date) => {
-    let courseGoal = {};
-    courseGoal.title = title;
-    courseGoal.description = description;
-    courseGoal.completeUntil = date;
-    return courseGoal;
+const WithTemplate = (template, hookId) => {
+    return (constructor) => {
+        const hookEle = document.getElementById(hookId);
+        const p = new constructor();
+        if (hookEle) {
+            hookEle.innerHTML = template;
+            hookEle.querySelector("h1").textContent = p.name;
+        }
+    };
 };
-const strings = ["Max", "Sports"];
+let Person = class Person {
+    constructor() {
+        this.name = "Jeff";
+        console.log("Creating person object...");
+    }
+};
+Person = __decorate([
+    WithTemplate("<h1>My Person Object</h1>", "app")
+], Person);
+const person1 = new Person();
+const person2 = new Person();
+console.log(person1);
+console.log(person2);
 //# sourceMappingURL=app.js.map
