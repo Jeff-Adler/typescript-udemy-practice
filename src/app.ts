@@ -121,3 +121,15 @@ const a2: Horse = {
 
 moveAnimal(a1);
 moveAnimal(a2);
+
+//Equivalent:
+const userInputElement = <HTMLInputElement>(
+  document.getElementById("user-input")!
+);
+
+//To:
+const userInputElement2 = document.getElementById(
+  "user-input"
+)! as HTMLInputElement;
+
+userInputElement.value = "Hi there!";

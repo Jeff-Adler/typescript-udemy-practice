@@ -71,4 +71,7 @@ const a2 = {
 };
 moveAnimal(a1);
 moveAnimal(a2);
+const userInputElement = (document.getElementById("user-input"));
+const userInputElement2 = document.getElementById("user-input");
+userInputElement.value = "Hi there!";
 //# sourceMappingURL=app.js.map
