@@ -17,4 +17,7 @@ const countAndPrintLength = (element) => {
 };
 console.log(countAndPrintLength("A string is lengthy"));
 console.log(countAndPrintLength(["An arary is also lengthy"]));
+const extractAndConvert = (obj, key) => {
+    return "Value: " + obj[key];
+};
 //# sourceMappingURL=app.js.map

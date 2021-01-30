@@ -39,3 +39,12 @@ const countAndPrintLength = <T extends Lengthy>(element: T): [T, string] => {
 
 console.log(countAndPrintLength("A string is lengthy"));
 console.log(countAndPrintLength(["An arary is also lengthy"]));
+
+//Specify that obj is guaranteed to have a property that key points to
+//T will be any type of object,and U will be a property of that object
+const extractAndConvert = <T extends object, U extends keyof T>(
+  obj: T,
+  key: U
+) => {
+  return "Value: " + obj[key];
+};
