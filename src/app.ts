@@ -78,3 +78,29 @@ numberStorage.addItem(5);
 //We won't be able to use removeItem if T = object, given the logic we've written
 //Thus, we extend T to only accept string, number, or boolean
 // const objStorage = new DataStorage<object>();
+
+//Generic Utility Types
+interface CourseGoal {
+  title: string;
+  description: string;
+  completeUntil: Date;
+}
+
+const createCourseGoal = (
+  title: string,
+  description: string,
+  date: Date
+): CourseGoal => {
+  //Partial allows us to create an object that will temporarily not meet all
+  //type definitions, but will eventually
+  let courseGoal: Partial<CourseGoal> = {};
+  courseGoal.title = title;
+  courseGoal.description = description;
+  courseGoal.completeUntil = date;
+  //Casting the partial as CourseGoal to ensure we return a true CourseGoal
+  return courseGoal as CourseGoal;
+};
+
+const strings: Readonly<string[]> = ["Max", "Sports"];
+//Not permitted since strings is readonly:
+// strings.push("Manu");

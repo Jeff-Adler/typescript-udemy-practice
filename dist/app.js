@@ -40,4 +40,12 @@ textStorage.addItem("Steve");
 console.log(textStorage.getItems());
 const numberStorage = new DataStorage();
 numberStorage.addItem(5);
+const createCourseGoal = (title, description, date) => {
+    let courseGoal = {};
+    courseGoal.title = title;
+    courseGoal.description = description;
+    courseGoal.completeUntil = date;
+    return courseGoal;
+};
+const strings = ["Max", "Sports"];
 //# sourceMappingURL=app.js.map
