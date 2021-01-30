@@ -13,6 +13,7 @@ function Logger(logString) {
 }
 const WithTemplate = (template, hookId) => {
     return (constructor) => {
+        console.log("Rendering template");
         const hookEle = document.getElementById(hookId);
         const p = new constructor();
         if (hookEle) {
@@ -28,10 +29,33 @@ let Person = class Person {
     }
 };
 Person = __decorate([
+    Logger("LOGGING - PERSON"),
     WithTemplate("<h1>My Person Object</h1>", "app")
 ], Person);
 const person1 = new Person();
 const person2 = new Person();
-console.log(person1);
-console.log(person2);
+function Log(target, propertyName) {
+    console.log("Property Decorator");
+    console.log(target, propertyName);
+}
+class Product {
+    constructor(t, p) {
+        this.title = t;
+        this.price = p;
+    }
+    set setPrice(val) {
+        if (val > 0) {
+            this.price = val;
+        }
+        else {
+            console.log("Value must be greater than 0.");
+        }
+    }
+    getPriceWithTax(tax) {
+        return this.price * (1 + tax);
+    }
+}
+__decorate([
+    Log
+], Product.prototype, "title", void 0);
 //# sourceMappingURL=app.js.map
