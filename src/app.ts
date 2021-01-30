@@ -25,3 +25,17 @@ const mergedObj3 = merge<{ name: string }, { vegetarian: boolean }>(
 console.log(mergedObj);
 console.log(mergedObj2);
 console.log(mergedObj3);
+
+// interface that says that whatever object will have a property length of type number
+interface Lengthy {
+  length: number;
+}
+
+const countAndPrintLength = <T extends Lengthy>(element: T): [T, string] => {
+  let descriptionText = "Got no value.";
+  if (element.length > 0) descriptionText = `Got ${element.length} elements.`;
+  return [element, descriptionText];
+};
+
+console.log(countAndPrintLength("A string is lengthy"));
+console.log(countAndPrintLength(["An arary is also lengthy"]));

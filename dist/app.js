@@ -9,4 +9,12 @@ const mergedObj3 = merge({ name: "Jeff" }, { vegetarian: false });
 console.log(mergedObj);
 console.log(mergedObj2);
 console.log(mergedObj3);
+const countAndPrintLength = (element) => {
+    let descriptionText = "Got no value.";
+    if (element.length > 0)
+        descriptionText = `Got ${element.length} elements.`;
+    return [element, descriptionText];
+};
+console.log(countAndPrintLength("A string is lengthy"));
+console.log(countAndPrintLength(["An arary is also lengthy"]));
 //# sourceMappingURL=app.js.map
