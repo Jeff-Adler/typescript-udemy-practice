@@ -40,7 +40,10 @@ function Log(target: any, propertyName: string | Symbol) {
   console.log(target, propertyName);
 }
 
-function Log2(target: any, name: string, descriptor: PropertyDescriptor) {}
+// function Log2(target: any, name: string, descriptor: PropertyDescriptor) {
+//     console.log('Accessor decorator!')
+//     console.log()
+// }
 
 class Product {
   @Log
